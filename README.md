@@ -1,6 +1,10 @@
 # Learning Elixir
 This is the repository for the LinkedIn Learning course `Learning Elixir`. The full course is available from [LinkedIn Learning][lil-course-url]. 
 
+The Elixir Programming Language is a functional language for creating easy to maintain and easy to scale applications. Elixir harnesses the power of the Erlang Virtual Machine, which offers scalability, high-availability, and fault-tolerance. Elixir is consistently ranked one of the most loved languages by developers and is found across a variety of industries for everything from web development to data ingestion to embedded software. 
+
+Through practical examples and exercises, this course helps you build your understanding of Elixir step by step, from the basics of data types, operators, and conditionals through advanced topics like managing control flow structures, functions, and recursion. At each step, instructor Vanessa Lee guides you through challenges test out your new Elixir skills.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -22,7 +26,11 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+    - A code editor ([VS Code](https://code.visualstudio.com/) is recommended)
+	- Version manager [asdf](asdf-url) 
+    - [Elixir plugin](https://github.com/asdf-vm/asdf-elixir) for asdf version manager to install the latest version of Elixir
+    - [Erlang plugin](https://github.com/asdf-vm/asdf-erlang) for asdf version manager to install the latest version of Erlang
+    - [ElixirLS: Elixir support and debugger](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls) extension for VSCode
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 3. [Course-specific instructions]
 
