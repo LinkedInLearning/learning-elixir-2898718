@@ -36,6 +36,9 @@ defmodule Basic do
     {:ok, "Mathematical Operators!"}
   end
 
+  @doc """
+  The comparison operators +, -, *, /.
+  """
   def comparison do
     amphibeans_list = ["toad", "frog"]
     amphibean_list = ["toad"]
