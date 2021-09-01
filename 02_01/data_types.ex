@@ -20,6 +20,7 @@ defmodule DataTypes do
     i = "caster oil"
 
     IO.puts(<<10>>)
+    IO.puts "Concatenation: Wise " <> w
     IO.puts "Captitalize #{w}: #{String.capitalize(w)}"
     IO.puts "Downcase #{a}: #{String.downcase(a)}"
     IO.puts "Upcase #{a}: #{String.upcase(a)}"

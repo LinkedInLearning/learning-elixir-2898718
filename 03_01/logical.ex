@@ -11,7 +11,7 @@ defmodule Logical do
   """
 
   @doc """
-  The logical operator "and", "or", "not", "&&", "||", and "!".
+  The logical operators "and", "or", "not", "&&", "||", and "!".
   """
   def operators do
     wizards_honor = true
