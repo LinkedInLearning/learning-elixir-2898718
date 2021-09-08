@@ -46,6 +46,10 @@ defmodule CLI do
     IO.puts("Welcome to the laboratory, #{name}. Let's make a #{item}!")
   end
 
+  def sum(a, b) do
+    a + b
+  end
+
   def mixture(potion_a, potion_b) do
     IO.puts("Mixing #{potion_a} with #{potion_b}!")
   end

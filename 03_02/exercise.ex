@@ -3,7 +3,7 @@ defmodule Exercise do
   This module contains an exercise for you to use what you have learned so far about data types and operators.
 
   Replace the nil value for all of the `answer_` variables with a value that
-  will make the corresponding `test_` operation return true.
+  will make the corresponding `test_` variable equal true.
 
   Did you get them right?
   To test out your answers, compile the file in iex and then call the function run/0
@@ -17,7 +17,7 @@ defmodule Exercise do
   If you get a false, try again. If you get stuck you can consult solutions.ex for the answers.
 
 
-  Elixir function return the value of the last line in the function block, the line before `end`.
+  Functions in Elixir return the value of the last line in the function block, the line before `end`.
   """
 
   @doc """

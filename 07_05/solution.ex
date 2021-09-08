@@ -1,6 +1,6 @@
 defmodule Solution do
     @moduledoc """
-    This module contains solutions to the exercises in 06_03.
+    This module contains solutions to the exercises in 07_05.
     """
 
     @doc """

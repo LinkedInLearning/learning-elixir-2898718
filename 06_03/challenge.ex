@@ -20,7 +20,9 @@ defmodule Challenge do
 
     magic_of_reduce/0
     This function take the list of unicode numbers and
-        - return a new list where the red x's have been replaced with the greek symbol omega
+        - return a new, sorted list
+        - where the red x's have been replaced with the greek symbol omega
+        - and only contains green check marks and omegas (anything else should be removed)
 
     To test your code, run test/0.
     """
@@ -51,10 +53,11 @@ defmodule Challenge do
 
     @doc """
     Make enumerable magic!
-    Return a new list where the red x's have been replaced with the greek symbol omega
+    Create a new list where the red x's have been replaced with the greek symbol omega.
+    Return a list only containing green check marks and omegas.
     """
     def magic_of_reduce() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        ["\u2705", "\u274c", "\u2705", "\u2705", "omega", "\u274c", "\u2705", "\u2705"]
     end
 
     @doc """
