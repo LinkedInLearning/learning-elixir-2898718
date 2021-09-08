@@ -1,6 +1,6 @@
 defmodule Exercise do
     @moduledoc """
-    This module contains an exercise for you. Use what you have learned about case statement
+    This module contains an exercise for you. Use what you have learned about if/else
     control structures in Elixir.
 
     Your exercise is to complete the functions in the module.
@@ -26,16 +26,23 @@ defmodule Exercise do
     """
 
     @doc """
-    Simple case statement
+    If
     """
-    def case_control() do
+    def if_control() do
 
     end
 
     @doc """
-    Complex case statement
+    If Else
     """
-    def complex_case_control() do
+    def if_else_control() do
+
+    end
+
+    @doc """
+    Unless
+    """
+    def unless_control() do
 
     end
 
@@ -43,7 +50,8 @@ defmodule Exercise do
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts case_control ==
-        IO.puts complex_case_control ==
+        IO.puts if_control ==
+        IO.puts if_else_control ==
+        IO.puts unless_control ==
     end
   end

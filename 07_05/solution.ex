@@ -1,62 +1,130 @@
 defmodule Solution do
     @moduledoc """
-    This module contains solutions to the exercises in 07_05.
+    This module contains solutions to the challenge in this chapter.
     """
 
     @doc """
-    Make enumerable magic!
-    Sort the enumerable and return the first three elements
+    The list of element maps. Use it in your functions by calling elements/0
     """
-    def magic_of_three() do
-        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
-        sorted_list = Enum.sort(list)
-        Enum.take(sorted_list, 3)
+    def elements() do
+        [
+            %{name: "Hydrogen", number: 1, weight: 1, group: 1},
+            %{name: "Carbon", number: 6, weight: 12, group: 14},
+            %{name: "Iridium", number: 77, weight: 192, group: 9},
+            %{name: "Neon", number: 10, weight: 20, group: 18},
+            %{name: "Neon", number: 10, weight: 20, group: 18}
+        ]
     end
 
-    @doc """
-    Make enumerable magic!
-    Only return the red x's
-    """
-    def magic_of_red() do
-        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
-        Enum.filter(list, fn i -> i === "\u274c" end)
-    end
 
     @doc """
-    Make enumerable magic!
-    Only return the green check marks
+    Control magic!
+    Classify the elements like we did with the reducer in chapter 6 but this time
+    use an if/else control structure
     """
-    def magic_of_green() do
-        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
-        Enum.reduce(list, [], fn
-            "\u2705", acc -> ["\u2705" | acc]
-            _, acc -> acc
+    def if_control() do
+        Enum.reduce(elements(), [], fn %{name: name, group: group} = e, acc ->
+            classification =
+                if group == 14 or name == "Hydrogen" do
+                    "other nonmetal"
+                else
+                    if group == 1 do
+                        "alkali metal"
+                    else
+                        if group == 9 do
+                            "transition metal"
+                        else
+                            "To be determined"
+                        end
+                    end
+                end
+            [Map.put(e, :classification, classification) | acc]
+        end)
+    end
+
+
+    @doc """
+    Control magic!
+    Classify the elements like we did with the reducer in chapter 6 but this time
+    use an case control structure
+    """
+    def case_control() do
+        Enum.reduce(elements(), [], fn e, acc ->
+            classification = case e do
+                %{name: "Hydrogen"} -> "other nonmetal"
+                %{group: 14} -> "other nonmetal"
+                %{group: 1} -> "alkali metal"
+                %{group: 9} -> "transition metal"
+                _ -> "To be determined"
+            end
+            [Map.put(e, :classification, classification) | acc]
         end)
     end
 
     @doc """
-    Make enumerable magic!
-    Create a new list where the red x's have been replaced with the greek symbol omega.
-    Return a list only containing green check marks and omegas.
+    Control magic!
+    Classify the elements like we did with the reducer in chapter 6 but this time
+    use an cond control structure
     """
-    def magic_of_reduce() do
-        list = ["\u2705", "\u274c", "\u2705", "\u2705", "omega", "\u274c", "\u2705", "\u2705"]
-        new_list = Enum.reduce(list, [], fn
-                "\u2705", acc -> ["\u2705" | acc]
-                "\u274c", acc -> ["\u03A9" | acc]
-                _, acc -> acc
-            end)
-        Enum.sort(new_list)
+    def cond_control() do
+        Enum.reduce(elements(), [], fn %{name: name, group: group} = e, acc ->
+            classification = cond do
+                name == "Hydrogen" || group == 14 -> "other nonmetal"
+                group == 1 -> "alkali metal"
+                group == 9 -> "transition metal"
+                true -> "To be determined"
+            end
+            [Map.put(e, :classification, classification) | acc]
+        end)
     end
 
+
     @doc """
-    Test your enumerable magic!
-    Run this function to test all your solutions.
+    Test your control over the magic!
     """
     def test() do
-        IO.puts magic_of_three() == ["✅", "✅", "✅"]
-        IO.puts magic_of_red() == ["❌", "❌"]
-        IO.puts magic_of_green() == ["✅", "✅", "✅", "✅", "✅"]
-        IO.puts magic_of_reduce() == ["Ω", "Ω", "✅", "✅", "✅", "✅", "✅"]
+        if_control() == classified_elements() &&
+        case_control() == classified_elements() &&
+        cond_control() == classified_elements()
+    end
+
+    defp classified_elements() do
+        [
+            %{
+                classification: "To be determined",
+                group: 18,
+                name: "Neon",
+                number: 10,
+                weight: 20
+            },
+            %{
+                classification: "To be determined",
+                group: 18,
+                name: "Neon",
+                number: 10,
+                weight: 20
+            },
+            %{
+                classification: "transition metal",
+                group: 9,
+                name: "Iridium",
+                number: 77,
+                weight: 192
+            },
+            %{
+                classification: "other nonmetal",
+                group: 14,
+                name: "Carbon",
+                number: 6,
+                weight: 12
+            },
+            %{
+                classification: "other nonmetal",
+                group: 1,
+                name: "Hydrogen",
+                number: 1,
+                weight: 1
+            }
+        ]
     end
   end

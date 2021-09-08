@@ -1,9 +1,9 @@
 defmodule Exercise do
     @moduledoc """
-    This module contains a challenge for you. Use what you have learned about iteration
-    in Elixir to solve this challenge.
+    This module contains an exercise for you. Use what you have learned about case statement
+    control structures and guards in Elixir.
 
-    Your challenge is to complete the functions in the module.
+    Your exercise is to complete the functions in the module.
 
     magic_of_three/0
     This function should take the list of unicode numbers and
@@ -26,45 +26,24 @@ defmodule Exercise do
     """
 
     @doc """
-    Make enumerable magic!
-    Sort the enumerable and return the first three elements
+    Simple case with guards
     """
-    def magic_of_three() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+    def case_control() do
+
     end
 
     @doc """
-    Make enumerable magic!
-    Only return the red x's
+    Complex case with guards
     """
-    def magic_of_red() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+    def complex_case_control() do
+
     end
 
     @doc """
-    Make enumerable magic!
-    Only return the green check marks
-    """
-    def magic_of_green() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
-    end
-
-    @doc """
-    Make enumerable magic!
-    Return a new list where the red x's have been replaced with the greek symbol omega
-    """
-    def magic_of_reduce() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
-    end
-
-    @doc """
-    Test your enumerable magic!
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts magic_of_three == ["✅", "✅", "✅"]
-        IO.puts magic_of_red == ["❌", "❌"]
-        IO.puts magic_of_green == ["✅", "✅", "✅", "✅", "✅"]
-        IO.puts magic_of_reduce == ["\u2705", "\u03A9", "\u2705", "\u2705", "\u03A9", "\u2705", "\u2705"]
+        IO.puts case_control ==
+        IO.puts complex_case_control ==
     end
   end

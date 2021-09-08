@@ -4,16 +4,23 @@ defmodule Solution do
     """
 
     @doc """
-    Simple case with guards
+    If
     """
-    def case_control() do
+    def if_control() do
 
     end
 
     @doc """
-    Complex case with guards
+    If Else
     """
-    def complex_case_control() do
+    def if_else_control() do
+
+    end
+
+    @doc """
+    Unless
+    """
+    def unless_control() do
 
     end
 
@@ -21,7 +28,8 @@ defmodule Solution do
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts case_control ==
-        IO.puts complex_case_control ==
+        IO.puts if_control ==
+        IO.puts if_else_control ==
+        IO.puts unless_control ==
     end
   end
