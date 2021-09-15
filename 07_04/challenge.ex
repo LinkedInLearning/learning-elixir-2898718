@@ -22,7 +22,6 @@ defmodule Challenge do
             %{name: "Hydrogen", number: 1, weight: 1, group: 1},
             %{name: "Carbon", number: 6, weight: 12, group: 14},
             %{name: "Iridium", number: 77, weight: 192, group: 9},
-            %{name: "Neon", number: 10, weight: 20, group: 18},
             %{name: "Neon", number: 10, weight: 20, group: 18}
         ]
     end
@@ -73,13 +72,6 @@ defmodule Challenge do
 
     defp classified_elements() do
         [
-            %{
-                classification: "To be determined",
-                group: 18,
-                name: "Neon",
-                number: 10,
-                weight: 20
-            },
             %{
                 classification: "To be determined",
                 group: 18,

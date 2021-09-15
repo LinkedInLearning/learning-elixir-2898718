@@ -5,14 +5,15 @@ defmodule Exercise do
 
     Your exercise is to complete the functions in the module.
 
-    magic_of_three/0
-    This function should take the list of unicode numbers and
-        - sort it
-        - return the first three elements
+    hydrogen?/1
+    This function should take an element map with a name key.
+    If the name key is "Hydrogen" then return true.
+    Otherwise return false.
 
-    magic_of_red/0
-    This function should take the list of unicode numbers  and
-        - only return the red x's
+    nonmetal?/1
+    This function should take an element map with a group key.
+    If the group key is 1 or 14 then return true.
+    Otherwise return false.
 
     magic_of_green/0
     This function should take the list of unicode numbers  and
@@ -26,32 +27,36 @@ defmodule Exercise do
     """
 
     @doc """
-    If
+    If the elment is named "Hydrogen", return true. Otherwise, false.
     """
-    def if_control() do
-
+    def hydrogen?(element) do
+        false
     end
 
     @doc """
-    If Else
+    If the element's group is 1 or 14, return true.
+    Otherwise, false
     """
-    def if_else_control() do
-
+    def nonmetal?(element) do
+        false
     end
 
     @doc """
-    Unless
+    Unless the element is named Hydrogen, return "Not Hydrogen."
     """
-    def unless_control() do
-
+    def message(element) do
+        nil
     end
 
     @doc """
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts if_control ==
-        IO.puts if_else_control ==
-        IO.puts unless_control ==
+        IO.puts hydrogen?(%{name: "Hydrogen"}) === True
+        IO.puts hydrogen?(%{name: "Iridium"}) === False
+        IO.puts nonmetal?(%{group: 1}) === True
+        IO.puts nonmetal?(%{group: 14}) === True
+        IO.puts nonmetal?(%{group: 3}) === False
+        IO.puts message(%{name: "Iridium"}) === "Not Hydrogen"
     end
   end

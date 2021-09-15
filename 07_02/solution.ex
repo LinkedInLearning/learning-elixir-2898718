@@ -1,35 +1,49 @@
 defmodule Solution do
     @moduledoc """
-    This module contains solutions to the exercises in this chapter.
+    This module contains a solution to the exercises.
     """
 
     @doc """
-    If
+    If the elment is named "Hydrogen", return true. Otherwise, false.
     """
-    def if_control() do
-
+    def hydrogen?(%{name: name}) do
+        if name == "Hydrogen" do
+            true
+        else
+            false
+        end
     end
 
     @doc """
-    If Else
+    If the element's group is 1 or 14, return true.
+    Otherwise, false
     """
-    def if_else_control() do
-
+    def nonmetal?(%{group: group}) do
+        if group == 1 or group == 14 do
+            true
+        else
+            false
+        end
     end
 
     @doc """
-    Unless
+    Unless the element is named Hydrogen, return "Not Hydrogen."
     """
-    def unless_control() do
-
+    def message(element) do
+        unless Map.get(element, :name) === "Hydrogen" do
+            "Not Hydrogen"
+        end
     end
 
     @doc """
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts if_control ==
-        IO.puts if_else_control ==
-        IO.puts unless_control ==
+        IO.puts hydrogen?(%{name: "Hydrogen"}) === true
+        IO.puts hydrogen?(%{name: "Iridium"}) === false
+        IO.puts nonmetal?(%{group: 1}) === true
+        IO.puts nonmetal?(%{group: 14}) === true
+        IO.puts nonmetal?(%{group: 3}) === false
+        IO.puts message(%{name: "Iridium"}) === "Not Hydrogen"
     end
   end
