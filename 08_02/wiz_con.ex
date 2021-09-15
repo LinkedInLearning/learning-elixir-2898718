@@ -48,7 +48,7 @@ defmodule WizCon do
             attendees(n, Enum.at(@names, n))
         end
     end
-    defp attendees(id, name) when is_integer(id) and is_binary(name) do
+    defp attendees(id, name) do
         speciality = Enum.random(@specialties)
         events = all_events()
             |> List.delete_at(Enum.random(0..3))
@@ -71,5 +71,5 @@ defmodule WizCon do
     defp event_data(3), do: {"Advanced Cauldrons", "15:00"}
     defp event_data(_), do: {"Free Time", "00:00"}
 
-    defp all_events(), do: for e <- 0..3, do: e
+    defp all_events(), do: Enum.into(0..3, [])
 end

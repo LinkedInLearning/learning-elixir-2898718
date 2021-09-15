@@ -12,7 +12,7 @@ defmodule Solution do
     def test() do
         Elements.heavy_metal(nil) == :error and
         Elements.heavy_metal([]) == :error and
-        Elements.heavy_metal([%{id: 1, name: "nitrogent"}]) == :error and
+        Elements.heavy_metal([%{id: 1, name: "nitrogen"}]) == :error and
         Elements.heavy_metal(elements()) == %{name: "Iridium", number: 77, weight: 192}
     end
 

@@ -4,7 +4,7 @@ defmodule Challenge do
     and functions in Elixir to solve this challenge.
 
     Your challenge is write a module with the necessary functions
-    in the file named elements.ex to make the test/0 function return return true.
+    in the file named challenge_elements.ex to make the test/0 function return return true.
     Your module should be named ChallengeElements with a file name
     08_04/challenge_elements.ex
 
@@ -23,7 +23,8 @@ defmodule Challenge do
     iex> Challenge.test()
     true
     """
-    alias ChallengeElements, as: Elements
+    # alias ChallengeElements, as: Elements
+    alias SolutionElements, as: Elements
 
     @doc """
     Test your knowledge of modules and functions. Given a list of elements, the
@@ -34,7 +35,7 @@ defmodule Challenge do
     def test() do
         Elements.heavy_metal(nil) == :error and
         Elements.heavy_metal([]) == :error and
-        Elements.heavy_metal([%{id: 1, name: "nitrogent"}]) == :error and
+        Elements.heavy_metal([%{id: 1, name: "nitrogen"}]) == :error and
         Elements.heavy_metal(elements()) == %{name: "Iridium", number: 77, weight: 192}
     end
 
