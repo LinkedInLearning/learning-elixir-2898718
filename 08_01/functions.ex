@@ -5,23 +5,23 @@ defmodule Functions do
     """
 
     @doc """
-    Register a WizCon attendee. Take a name, create an attendee, and return their
+    Register a WizCon guest. Take a name, create a guest, and return their
     schedule.
     """
     def register(name) do
-        attendee = attendees(name)
-        schedule(attendee)
+        guest = guests(name)
+        schedule(guest)
     end
 
     @doc """
-    Take an attendee and return a print out of their WizCon schedule.
+    Take a guest and return a print out of their WizCon schedule.
     """
     def schedule(%{name: name, events: events}) do
         IO.puts "#{name}'s WizCon Schedule: "
         for {event, time} <- handle_events(events), do: IO.puts "#{time} - #{event}"
         "Let the magic begin!"
     end
-    def schedule(nil), do: "Attendee could not be registered."
+    def schedule(nil), do: "Guest could not be registered."
 
     @doc """
     Take a list of events ids. Match each event id to a tuple of the event name
@@ -39,10 +39,10 @@ defmodule Functions do
     defp event_data(3), do: {"Advanced Cauldrons", "15:00"}
     defp event_data(_), do: {"Free Time", "00:00"}
 
-    defp attendees(name) when is_binary(name) do
+    defp guests(name) when is_binary(name) do
         %{name: name, events: all_events()}
     end
-    defp attendees(_), do: nil
+    defp guests(_), do: nil
 
     defp all_events(), do: for e <- 0..3, do: e
 end
