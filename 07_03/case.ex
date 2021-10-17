@@ -1,22 +1,13 @@
-defmodule Control do
+defmodule Flow.Case do
   @moduledoc """
   This module contains functions for learning about control flow in Elixir with
-  the Cond, Case, and With structures.
+  the Case structures.
   """
 
   @doc """
-  Control Flow
+  Control Flow with Case expression
   """
   def flow() do
-    element = "carbon"
-
-    cond do
-      element === "iridium" ->
-        IO.puts "cond structure tells us #{element} is iridium"
-      true ->
-        IO.puts "cond structure default caught #{element}"
-    end
-
     element = "CARBON"
 
     case element do
@@ -74,14 +65,6 @@ defmodule Control do
     end
 
     IO.inspect(Map.put(element, :classification, classification), label: "The next classifier returned")
-
-    element = %{name: "Hydrogen", number: 1, weight: 1, group: 1}
-    with_tuple = with name <- Map.get(element, :name),
-    1 <- Map.get(element, :group) do
-      {:ok, name}
-    end
-
-    IO.inspect(with_tuple, label: "The With structure without an else clauses returns this tuple")
 
     {:ok, "Control with control flow structures!"}
   end

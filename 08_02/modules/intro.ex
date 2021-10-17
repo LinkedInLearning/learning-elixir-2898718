@@ -5,20 +5,21 @@ defmodule Modules.Intro do
   In a real application, the list of guests would come from storage, such
   as a database. We aren't working with databases here, so a list it is!
   """
-  @guests ["Casey", "Riley", "Jessie", "Peyton", "Pat"]
+  @specialties ["Elements", "Incantations", "Abjuration", "Enchantment"]
 
   @doc """
-  Register a WizCon guest. Take a name, create a guest, and return their
-  schedule.
+  Register a WizCon guest. Take a name. Return welcome wiht randome ID.
   """
-  def register(name \\ "Wise and Wonderful") do
-    id = add_guest(name)
-
-    "Registration successful! Your ID is #{id}. Let the magic begin, #{name}!"
+  def register(name) when is_binary(name) do
+    add_guest(name)
   end
 
+  def register(_), do: "Guest not registered."
+
   defp add_guest(name) when is_binary(name) do
-    Enum.count(@guests) + 1
+    random_number = :rand.uniform(100)
+    speciality = Enum.random(@specialties)
+    "#{name} registered to ID #{random_number}. Attend our events to learn more about #{speciality}. Let the magic begin!"
   end
 
   defp add_guest(_), do: nil

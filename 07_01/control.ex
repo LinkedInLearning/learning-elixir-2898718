@@ -12,24 +12,28 @@ defmodule Control do
 
         element = "carbon"
 
-        IO.puts "If the #{element} is carbon, return CARBON, else, return the #{element}"
+        IO.puts "If the element is carbon, return \"It's alive!\", else return \"Not a living thing\""
+
         if element === "carbon" do
-            IO.puts String.upcase element
+            IO.puts "It's alive!"
         else
-            IO.puts element
+            IO.puts "Not a living thing."
         end
 
-        element = %{name: "Hydrogen", group: 1}
 
-        IO.inspect(element, label: "Our current element is")
+        element_map = %{name: "Hydrogen", group: 1}
+
+        IO.inspect(element_map, label: "Our current element map is")
         IO.puts "If the element's name is Hydrogen and the group is 1, return \"Other nonmetal\", else return \"Other\""
-        if element.name === "Hydrogen" and element.group === 1 do
+
+        if element_map.name === "Hydrogen" and element_map.group === 1 do
             IO.puts "Other nonmetal"
         else
             IO.puts "Other"
         end
 
         IO.inspect(element, label: "Our current element is")
+
         unless element === "nitrogen" do
           IO.puts "The element is not Nitrogen."
         end

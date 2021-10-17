@@ -6,24 +6,23 @@ defmodule Exercise do
     Your exercise is to complete the functions in the module.
 
     hydrogen?/1
-    This function should take an element map with a name key.
+    This function should take an element map with a name key and use an If structure to
+    check the name of the given element.
     If the name key is "Hydrogen" then return true.
     Otherwise return false.
 
     nonmetal?/1
-    This function should take an element map with a group key.
+    This function should take an element map with a group key and use an If structure to
+    check the group of the given element.
     If the group key is 1 or 14 then return true.
     Otherwise return false.
 
-    magic_of_green/0
-    This function should take the list of unicode numbers  and
-        - use reduce/3 to only return the green check marks
+    message/1
+    Use an unless structure to return "Not Hydrogen" if the given element
+    is not named "Hydrogen".
 
-    magic_of_reduce/0
-    This function take the list of unicode numbers and
-        - return a new list where the red x's have been replaced with the greek symbol omega
-
-    To test your code, run test/0.
+    To test your code, run test/0. Your code is successful if you return all true
+    statements.
     """
 
     @doc """

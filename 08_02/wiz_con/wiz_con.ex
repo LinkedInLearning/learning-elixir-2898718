@@ -2,82 +2,61 @@ defmodule WizCon do
   @moduledoc """
   Registration functions for the wizard convention.
   """
-  @specialties ["elements", "incantations", "abjuration", "enchantment"]
-  @names ["Casey", "Riley", "Jessie", "Peyton", "Aspen", "Adrian", "Pat", "Jackie", "Sam", "Carson"]
-
+  @specialties ["Elements", "Incantations", "Abjuration", "Enchantment"]
   alias WizCon.Guest
 
   @doc """
-  Register a WizCon guest. Take a name, create a guest, and return their
-  schedule.
+  Register a WizCon guest. Take a name, create a guest, and return a schedule.
   """
   def register(name \\ "Wise and Wonderful") do
     add_guest(name)
-    |> display_schedule()
+    |> display()
   end
 
-  defp add_guest(name) when is_binary(name) do
-    guests = guests()
-    next_id = Enum.count(guests)
-    [guests(next_id, name) | guests]
-  end
-
-  defp add_guest(_), do: guests()
-
-  defp guests() do
-    for n <- 0..9 do
-      guests(n, Enum.at(@names, n))
-    end
-  end
-
-  defp guests(id, name) do
+  defp add_guest(name) do
+    id = :rand.uniform(100)
     speciality = Enum.random(@specialties)
-    events = all_events()
-      |> List.delete_at(Enum.random(0..3))
-      |> Enum.map(fn event -> event_data(event) end)
-      |> Enum.sort_by(fn {_, time} -> time end)
-      |> Enum.map(fn {event, time} -> "#{time} - #{event}" end)
+    events = events()
 
     %Guest{id: id, name: name, events: events, speciality: speciality}
   end
 
   @doc """
-  Take a list of guests and return a print out of the first wizard's WizCon schedule.
+  Print out a WizCon schedule for a guest.
   """
-  def display_schedule([wizard | guests]) do
-    IO.puts "Welcome #{wizard.name}!"
-    IO.puts "Your speciality is #{wizard.speciality}"
-    IO.puts "Your WizCon Schedule is "
+  def display(nil), do: "Guest not registered."
 
-    for event <- wizard.events, do: IO.puts event
-
-    IO.inspect(colleagues(wizard, guests), label: "Wizards who share your speciality")
-
-    "Let the magic begin, #{wizard.name}!"
+  # TODO end of chapter question: why don't I use IO.puts on the last line of this function?
+  def display(wizard) do
+    display_welcome(wizard.name, wizard.speciality)
+    display_events(wizard.events)
+    "Let the magic begin!"
   end
 
-  def display_schedule(nil), do: "Guest could not be registered."
+  defp display_welcome(name, speciality) do
+    IO.puts "Welcome #{name}, Master of #{speciality}"
+  end
 
-  defp colleagues(wizard, guests) do
-    Enum.reduce(guests, [], fn guest, acc ->
-      if guest.speciality == wizard.speciality do
-        [guest.name | acc]
-      else
-        acc
-      end
+  defp display_events(events) do
+    for event <- events, do: IO.puts event
+  end
+
+  def events() do
+    get_events()
+    |> Enum.sort()
+    |> Enum.map(fn event ->
+      event
+      |> String.replace(";", " - ")
+      |> String.replace("/", " in ")
     end)
-    |> Enum.join(", ")
   end
 
-  defp event_data(0), do: {"Alchemy", "09:00"}
-
-  defp event_data(1), do: {"Wands", "11:00"}
-
-  defp event_data(2), do: {"Elements 101", "13:00"}
-
-  defp event_data(3), do: {"Advanced Cauldrons", "15:00"}
-
-  defp event_data(_), do: {"Free Time", "00:00"}
-
-  defp all_events(), do: Enum.into(0..3, [])
+  defp get_events() do
+    [
+      "11:00;Wands/Room A",
+      "09:00;Alchemy/Room B",
+      "15:00;Advanced Cauldrons/Room B",
+      "13:00;Elements 101/Room A"
+    ]
+  end
 end

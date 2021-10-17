@@ -1,4 +1,4 @@
-defmodule Recursion do
+defmodule Advanced do
   @moduledoc """
   Recursion is when a function calls itself. This moduel deomonstrates
   recursion  with the head and tail syntax a linked list.
