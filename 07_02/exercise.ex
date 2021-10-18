@@ -22,7 +22,7 @@ defmodule Exercise do
     is not named "Hydrogen".
 
     To test your code, run test/0. Your code is successful if you return all true
-    statements.
+    values.
     """
 
     @doc """
