@@ -13,6 +13,6 @@ defmodule Wizard do
 
   """
   def hello(name) do
-    "Welcome to the laboratory, #{name}. Let's get to work!"
+    "Welcome, #{name}!"
   end
 end
