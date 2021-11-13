@@ -1,6 +1,7 @@
 defmodule Wizard.List do
   @moduledoc """
-  
+  This module contains functions for learning 
+  about the List data type in Elixir.
   """
 
   @doc """
@@ -14,7 +15,7 @@ defmodule Wizard.List do
   def add(list, value) do
     IO.inspect [value | list]
     IO.inspect list ++ [value]
-    {:ok, "Added element to list"}
+    :ok
   end
 
   def demo do
