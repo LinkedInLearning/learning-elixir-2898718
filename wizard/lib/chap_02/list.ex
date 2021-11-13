@@ -1,7 +1,7 @@
 defmodule Wizard.List do
   @moduledoc """
   This module contains functions for learning 
-  about the List data type in Elixir.
+  about the List data type.
   """
 
   @doc """

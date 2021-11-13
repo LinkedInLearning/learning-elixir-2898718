@@ -1,7 +1,7 @@
 defmodule Wizard.Tuple do
   @moduledoc """
   This module contains functions for learning 
-  about the Tuple data type in Elixir.
+  about the Tuple data type.
   """
 
   @doc """

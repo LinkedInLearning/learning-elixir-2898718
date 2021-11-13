@@ -1,7 +1,7 @@
 defmodule Wizard.Atom do
   @moduledoc """
   This module contains functions for learning 
-  about the Atom data type in Elixir.
+  about the Atom data type.
   """
 
   @doc """

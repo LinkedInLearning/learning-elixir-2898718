@@ -1,6 +1,6 @@
 defmodule Wizard.Chap02.Integer do
   @moduledoc """
-  This module contains functions for learning about the Integer and Float data types in Elixir.
+  This module contains functions for learning about the Integer and Float data types.
 
   # Variables
   Variable names can include uppercase or lowercase letters, underscores, or numbers,

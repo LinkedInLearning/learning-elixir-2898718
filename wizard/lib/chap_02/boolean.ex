@@ -1,6 +1,6 @@
 defmodule Wizard.Chap02.Boolean do
   @moduledoc """
-  This module contains functions for learning about the Boolean data type in Elixir.
+  This module contains functions for learning about the Boolean data type.
 
   # Variables
   Variable names can include uppercase or lowercase letters, underscores, or numbers,
