@@ -19,7 +19,7 @@ defmodule Wizard.List do
   end
 
   def demo do
-    a = ["bismuth", 86, {:ok, "copper"}]
+    a = ["toad", 2, {:ok, "green"}]
 
     IO.inspect(a, label: "List")
     IO.puts "First element: #{List.first(a)}"
