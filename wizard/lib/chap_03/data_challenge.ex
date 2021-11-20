@@ -19,23 +19,14 @@ defmodule Wizard.DataChallenge do
   in Elixir in the the chapter on Pattern Matching. The warning will go away once you have
   solved the challenge and given each of the functions a different arity.
 
-  Hint: remember that in Elixir, functions return the value of the last line in the function block,
+  Hint 1: remember that in Elixir, functions return the value of the last line in the function block,
   the line before `end`.
 
+  Hint 2: to round a float, use the Kernel function round/1
 
+  Hint 3: only stings can be concatenated with <>
 
-  Replace the nil value for all of the `answer_` variables 
-  with a value that will make the corresponding `test_` 
-  variable equal true.
-
-  To test out your answers, recompile and call the function.
-
-  iex> Wizard.LogicExercise.run()
-
-  If your answers are correct, the function will return true. 
-  If not, the function will return false.
-  If you get a false, try again. If you get stuck you can 
-  consult branch 03_02e.
+  Check your solution against the solution in branch 03_06e.
   """
 
   @doc """
@@ -43,7 +34,7 @@ defmodule Wizard.DataChallenge do
   Return the product.
   """
   def multiplier(a, b) do
-
+    a * b
   end
 
   @doc """
@@ -51,7 +42,7 @@ defmodule Wizard.DataChallenge do
   Return the product.
   """
   def multiplier(a, b, c) do
-
+    a * b * c
   end
 
   @doc"""
@@ -63,7 +54,8 @@ defmodule Wizard.DataChallenge do
   round/1.
   """
   def percent(a, b) do
-
+    percent = round((b/a)*100)
+    to_string(percent) <> "%"
   end
 
   @doc """
