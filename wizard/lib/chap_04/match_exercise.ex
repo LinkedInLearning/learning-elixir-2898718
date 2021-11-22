@@ -14,7 +14,9 @@ defmodule Wizard.MatchExercise do
   * moondew cannot mix with ginger
   
   Hint 1: the underscore. Prepend a variable name with an
-  underscore if the variable is not used. 
+  underscore if the variable is not used, i.e. 
+  ("gunpowder", _anything). You may also just
+  use the underscore by itself, i.e. ("gunpowder", _).
 
   Hint 2: the order of function definitions matters. The first 
   pattern to match wins.
