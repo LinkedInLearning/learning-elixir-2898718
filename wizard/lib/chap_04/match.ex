@@ -46,9 +46,9 @@ defmodule Wizard.Match do
     iex> Wizard.Match.map(potion)
     "A good luck spell."
   """
-  def map(%{spell: s, type: t}) do
+  # def map(%{spell: s, type: t}) do
     # "A #{t} #{s} spell."
-  end
+  # end
 
   @doc"""
   Pattern match on function definitions
