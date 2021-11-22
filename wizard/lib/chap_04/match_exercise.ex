@@ -14,7 +14,9 @@ defmodule Wizard.MatchExercise do
   * moondew cannot mix with ginger
   
   Hint 1: the underscore. Prepend a variable name with an
-  underscore if the variable is not used. 
+  underscore if the variable is not used, i.e. 
+  ("gunpowder", _anything). You may also just
+  use the underscore by itself, i.e. ("gunpowder", _).
 
   Hint 2: the order of function definitions matters. The first 
   pattern to match wins.
@@ -34,9 +36,16 @@ defmodule Wizard.MatchExercise do
   Accepts two arguments and varifies that two agruments can 
   be combined safely. Returns true or false.
   """
-  def can_mix?(_a, _b) do
-    false
-  end
+  def can_mix?("gunpowder", _anything), do: false
+  def can_mix?(_anything, "gunpowder"), do: false
+  def can_mix?("dust", _anything), do: true
+  def can_mix?(_anything, "dust"), do: true
+  def can_mix?("rose", "ginger"), do: true
+  def can_mix?("rose", "moondew"), do: true
+  def can_mix?("moondew", "rose"), do: true
+  def can_mix?("moondew", "ginger"), do: false
+  def can_mix?("ginger", "moondew"), do: false
+  def can_mix?(_, _), do: true
 
   @doc """
   Test your function definitions
