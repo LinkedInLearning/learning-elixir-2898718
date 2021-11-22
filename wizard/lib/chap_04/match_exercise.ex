@@ -36,9 +36,7 @@ defmodule Wizard.MatchExercise do
   Accepts two arguments and varifies that two agruments can 
   be combined safely. Returns true or false.
   """
-  def can_mix?(_a, _b) do
-    false
-  end
+  def can_mix?("gunpowder", _anything), do: false
 
   @doc """
   Test your function definitions
