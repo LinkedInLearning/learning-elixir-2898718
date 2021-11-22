@@ -8,7 +8,7 @@ defmodule Wizard.Match do
   Use the match operator with a tuple
   """
   def tuple do
-    # {item, quantity, potion}  = {"newt", 1, :antidote}
+    # {"newt", 1, :antidote}
     # "The #{potion} potion needs #{quantity} #{item}"
   end
 
