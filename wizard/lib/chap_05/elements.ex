@@ -37,27 +37,6 @@ defmodule Wizard.Elements do
     "CarbonHydrogenIronNitrogentTinLead"
   """
   def elements do
-    elements = ["Carbon"] 
-    IO.inspect(elements, label: "One element")
-
-    elements = List.insert_at(elements, 1, "Hydrogen")
-    IO.inspect(elements, label: "Two element")
-
-    more_elements = ["Iron", "Iron", "Nitrogent", "Tin", "Lead"]
-    IO.inspect(more_elements, label: "More elements")
-
-    elements = elements ++ more_elements
-    IO.puts "All together"
-    IO.inspect(elements)
-
-    elements = List.delete(elements, "Iron")
-    IO.puts("One Iron")
-    IO.inspect(elements)
-    
-    elements = List.replace_at(elements, 3, "Nitrogen")
-    IO.puts("Properly spelled Nitrogen")
-    IO.inspect(elements)
-    
-    List.to_string(elements)
+    :ok
   end
 end
