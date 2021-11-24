@@ -1,4 +1,4 @@
-defmodule Wizard.Lists do
+defmodule Wizard.Elements do
   @moduledoc """
   This module contains functions for advanced learning  
   about lists.
