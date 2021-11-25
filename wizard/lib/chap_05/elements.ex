@@ -22,7 +22,6 @@ defmodule Wizard.Elements do
     hydrogen = Map.new()
     hydrogen = Map.put(hydrogen, :name, "Hydrogen")
     hydrogen = Map.put(hydrogen, :nmber, 1)
-  
     number = Map.get(hydrogen, :number)
     IO.inspect(number, label: "hydrogen's atomic number")
 
