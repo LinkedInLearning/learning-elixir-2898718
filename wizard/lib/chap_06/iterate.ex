@@ -8,7 +8,7 @@ defmodule Wizard.Iterate do
     numbers = [1, 2, 3]
     IO.inspect(numbers, label: "Numbers")
 
-    iterate = nil
+    iterate = for n <- numbers, do: n * 3
     IO.inspect(iterate, label: "Muliply each by 3")
   end
 
@@ -16,10 +16,14 @@ defmodule Wizard.Iterate do
     symbols = %{"Iron" => "Fe", "Carbon" => "C"}
     IO.inspect(symbols, label: "Symbols")
 
-    keys = nil
+    keys = for {key, _value} <- symbols do
+      key
+    end
     IO.inspect(keys, label: "List the keys")
 
-    values = nil
+    values = for {_key, value} <- symbols do
+      value
+    end
     IO.inspect(values, label: "List the values")
   end
 
@@ -31,7 +35,9 @@ defmodule Wizard.Iterate do
     IO.inspect(sizes, label: "Sizes")
     IO.inspect(items, label: "Items")
 
-    joins = nil
+    joins = for a <- amounts, s <- sizes, i <- items do
+      "#{a} #{s} of #{i}"
+    end
     IO.inspect(joins, label: "Permutations")
   end
 
@@ -39,13 +45,13 @@ defmodule Wizard.Iterate do
     i = [5, 4, 8, 1, 2]
     IO.inspect(i, label: "Integers")
 
-    i_sorted = nil
+    i_sorted = Enum.sort(i)
     IO.inspect(i_sorted, label: "Integers sorted")
 
     l = ["r", "i", "d", "t"]
     IO.inspect(l, label: "Letters")
 
-    l_sorted = nil
+    l_sorted = Enum.sort(l)
     IO.inspect(l_sorted, label: "Letters sorted")
   end
 
@@ -66,7 +72,9 @@ defmodule Wizard.Iterate do
     ]
     IO.inspect(elements, label: "Elements")
 
-    iterate = nil
+    iterate = Enum.map(elements, fn(e) -> 
+      Map.get(e, :symbol)
+    end)
     IO.inspect(iterate, label: "List of element symbols")
   end
 end
