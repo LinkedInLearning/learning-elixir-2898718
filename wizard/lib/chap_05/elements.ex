@@ -16,22 +16,21 @@ defmodule Wizard.Elements do
     carbon = %{name: "Carbon", number: 6}
     IO.inspect(carbon, label: "Map with two keys")
 
-    name = nil
+    name = Map.get(carbon, :name)
     IO.inspect(name, label: "Carbon's name")
-
-    number = Map.get(carbon, :nmber)
-    IO.inspect(number, label: "Carbon's atomic number")
 
     hydrogen = Map.new()
     hydrogen = Map.put(hydrogen, :name, "Hydrogen")
     hydrogen = Map.put(hydrogen, :nmber, 1)
+    hydrogen = Map.delete(hydrogen, :nmber)
+    hydrogen = Map.put(hydrogen, :number, 1)
     number = Map.get(hydrogen, :number)
-    IO.inspect(number, label: "hydrogen's atomic number")
+    IO.inspect(number, label: "Hydrogen's atomic number")
 
-    keys = nil
+    keys = Map.keys(hydrogen)
     IO.inspect(keys, label: "Hydrogen's keys")
     
-    [
+    [c, h, i, n, t, l] = [
       %{name: "Carbon", number: 6},  
       %{name: "Hydrogen", number: 1}, 
       %{name: "Iron", number: 6}, 
@@ -42,8 +41,10 @@ defmodule Wizard.Elements do
 
     # Iron has the wrong atomic number!
     # Change it from 6 to 26
+
+    i = Map.put(i, :number, 26)
   
-    elements = nil
+    elements = [c, h, i, n, t, l]
     IO.inspect(elements, label: "All the elements")
   end
 end
