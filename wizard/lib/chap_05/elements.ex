@@ -1,7 +1,6 @@
 defmodule Wizard.Elements do
   @moduledoc """
-  This module contains functions for advanced learning  
-  about lists.
+  This module contains functions for managing data collections.
   """
 
   @doc """
