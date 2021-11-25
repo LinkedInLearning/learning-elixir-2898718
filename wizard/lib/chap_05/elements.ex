@@ -19,9 +19,6 @@ defmodule Wizard.Elements do
     name = nil
     IO.inspect(name, label: "Carbon's name")
 
-    number = Map.get(carbon, :nmber)
-    IO.inspect(number, label: "Carbon's atomic number")
-
     hydrogen = Map.new()
     hydrogen = Map.put(hydrogen, :name, "Hydrogen")
     hydrogen = Map.put(hydrogen, :nmber, 1)
