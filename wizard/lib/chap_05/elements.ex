@@ -13,7 +13,7 @@ defmodule Wizard.Elements do
     carbon = Map.put(carbon, :name, "Carbon")
     IO.inspect(carbon, label: "Map with one key")
 
-    carbon = %{name: "Carbon", number: 6}
+    carbon = Map.put(carbon, :number, 6)
     IO.inspect(carbon, label: "Map with two keys")
 
     name = nil
