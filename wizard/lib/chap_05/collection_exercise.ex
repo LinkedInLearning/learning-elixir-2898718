@@ -30,7 +30,7 @@ defmodule Wizard.CollectionExercise do
   @doc """
   Combine the two lists. 
   """
-  def flat() do
+  def combine() do
     ["Carbon", "Hydrogen"]
     ["Tin", "Lead"]
   end
@@ -71,7 +71,7 @@ defmodule Wizard.CollectionExercise do
     IO.puts first([1, 2, 3]) == 1
     IO.puts last([1, 2, 3]) == 3
     IO.puts remove() == ["Hydrogen", "Ruthenium", "Silicon"]
-    IO.puts flat() == ["Carbon", "Hydrogen", "Tin", "Lead"]
+    IO.puts combine() == ["Carbon", "Hydrogen", "Tin", "Lead"]
     IO.puts Enum.all?(books(), fn b -> 
         Map.has_key?(b, :title) 
         && Map.has_key?(b, :author)
