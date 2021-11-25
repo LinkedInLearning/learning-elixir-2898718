@@ -8,31 +8,27 @@ defmodule Wizard.CollectionExercise do
   Write a function takes a list and prints out the first 
   element of that list.
   """
-  def first(_) do
-
-  end
+  def first(list), do: List.first(list)
 
   @doc """
   Write a function takes a list and prints out the last 
   element of that list.
   """
-  def last(_) do
-
-  end
+  def last(list), do: List.last(list)
 
   @doc """
   Return the list with "Carbon" removed from the list.
   """
   def remove() do
-    ["Carbon", "Hydrogen", "Ruthenium", "Silicon"]
+    elements = ["Carbon", "Hydrogen", "Ruthenium", "Silicon"]
+    List.delete(elements, "Carbon")
   end
 
   @doc """
   Combine the two lists. 
   """
-  def flat() do
-    ["Carbon", "Hydrogen"]
-    ["Tin", "Lead"]
+  def combine() do
+    ["Carbon", "Hydrogen"] ++ ["Tin", "Lead"]
   end
 
   @doc """
@@ -49,8 +45,11 @@ defmodule Wizard.CollectionExercise do
   * Cabbage and Casting, by Cilka Parfait, 1975
   """
   def books() do
-    book = Map.new()
-    [book]
+    book1 = %{title: "Wizard Compendium", author: "by Vesuvi Monmount", year: 1968}
+    book2 = %{title: "Spells for All Seasons", author: "Helen Troy", year: 1488}
+    book3 = %{title: "The House of Herbs", author: "Nikola Wynne", year: 1856}
+    book4 = %{title: "Cabbage and Casting", author: "Cilka Parfait", year: 1975}
+    [book1, book2, book3, book4]
   end
 
   @doc """
@@ -60,7 +59,7 @@ defmodule Wizard.CollectionExercise do
   already written?
   """
   def book_keys(_) do
-
+    Map.keys(first(books()))
   end
 
 
@@ -71,7 +70,7 @@ defmodule Wizard.CollectionExercise do
     IO.puts first([1, 2, 3]) == 1
     IO.puts last([1, 2, 3]) == 3
     IO.puts remove() == ["Hydrogen", "Ruthenium", "Silicon"]
-    IO.puts flat() == ["Carbon", "Hydrogen", "Tin", "Lead"]
+    IO.puts combine() == ["Carbon", "Hydrogen", "Tin", "Lead"]
     IO.puts Enum.all?(books(), fn b -> 
         Map.has_key?(b, :title) 
         && Map.has_key?(b, :author)
