@@ -1,7 +1,8 @@
 defmodule Wizard.CollectionExercise do
   @moduledoc """
   This module contains several exercises. Use what you have 
-  learned about lists and maps.
+  learned about lists and maps to complete the incomplete
+  functions.
   """
 
   @doc """
