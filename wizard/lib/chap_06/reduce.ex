@@ -20,8 +20,8 @@ defmodule Wizard.Reduce do
     elements = ["Carbon", "Hydrogen", "Iron"]
     IO.inspect(elements, label: "Elements")
 
-    Enum.reduce(elements, fn e, acc -> 
-      [String.downcase(e)] ++ acc
+    Enum.reduce(elements, [], fn e, acc -> 
+      [String.downcase(e) | acc]
     end)
   end
 
