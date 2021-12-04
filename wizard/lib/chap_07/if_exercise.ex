@@ -58,11 +58,11 @@ defmodule Wizard.IfExercise do
     iex> Wizard.IfExercise.test()
     """
     def test() do
-      IO.puts hydrogen?(%{name: "Hydrogen"}) === True
-      IO.puts hydrogen?(%{name: "Iridium"}) === False
-      IO.puts nonmetal?(%{group: 1}) === True
-      IO.puts nonmetal?(%{group: 14}) === True
-      IO.puts nonmetal?(%{group: 3}) === False
+      IO.puts hydrogen?(%{name: "Hydrogen"}) === true
+      IO.puts hydrogen?(%{name: "Iridium"}) === false
+      IO.puts nonmetal?(%{group: 1}) === true
+      IO.puts nonmetal?(%{group: 14}) === true
+      IO.puts nonmetal?(%{group: 3}) === false
       IO.puts message(%{name: "Iridium"}) === "Not Hydrogen"
     end
   end
