@@ -33,23 +33,33 @@ defmodule Wizard.IfExercise do
     If the elment is named "Hydrogen", return true. 
     Otherwise, false.
     """
-    def hydrogen?(element) do
-      false
+    def hydrogen?(%{name: name}) do
+      if name == "Hydrogen" do
+          true
+      else
+          false
+      end
     end
 
     @doc """
     If the element's group is 1 or 14, return true.
     Otherwise, false
     """
-    def nonmetal?(element) do
-      false
+    def nonmetal?(%{group: group}) do
+      if group == 1 or group == 14 do
+          true
+      else
+          false
+      end
     end
 
     @doc """
     Unless the element is named Hydrogen, return "Not Hydrogen."
     """
     def message(element) do
-      nil
+      unless Map.get(element, :name) === "Hydrogen" do
+          "Not Hydrogen"
+      end
     end
 
     @doc """
@@ -58,11 +68,11 @@ defmodule Wizard.IfExercise do
     iex> Wizard.IfExercise.test()
     """
     def test() do
-      IO.puts hydrogen?(%{name: "Hydrogen"}) === True
-      IO.puts hydrogen?(%{name: "Iridium"}) === False
-      IO.puts nonmetal?(%{group: 1}) === True
-      IO.puts nonmetal?(%{group: 14}) === True
-      IO.puts nonmetal?(%{group: 3}) === False
+      IO.puts hydrogen?(%{name: "Hydrogen"}) === true
+      IO.puts hydrogen?(%{name: "Iridium"}) === false
+      IO.puts nonmetal?(%{group: 1}) === true
+      IO.puts nonmetal?(%{group: 14}) === true
+      IO.puts nonmetal?(%{group: 3}) === false
       IO.puts message(%{name: "Iridium"}) === "Not Hydrogen"
     end
   end
