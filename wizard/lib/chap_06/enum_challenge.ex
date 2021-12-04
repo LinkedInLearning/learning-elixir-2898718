@@ -32,7 +32,9 @@ defmodule Wizard.EnumChallenge do
     Sort the enumerable and return the first three elements
     """
     def magic_of_three() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        sorted_list = Enum.sort(list)
+        Enum.take(sorted_list, 3)
     end
 
     @doc """
@@ -40,7 +42,8 @@ defmodule Wizard.EnumChallenge do
     Only return the red x's
     """
     def magic_of_red() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        Enum.filter(list, fn i -> i === "\u274c" end)
     end
 
     @doc """
@@ -48,7 +51,11 @@ defmodule Wizard.EnumChallenge do
     Only return the green check marks
     """
     def magic_of_green() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        list = ["\u2705", "\u274c", "\u2705", "\u2705", "\u274c", "\u2705", "\u2705"]
+        Enum.reduce(list, [], fn
+            "\u2705", acc -> ["\u2705" | acc]
+            _, acc -> acc
+        end)
     end
 
     @doc """
@@ -57,7 +64,13 @@ defmodule Wizard.EnumChallenge do
     Return a list only containing green check marks and omegas.
     """
     def magic_of_reduce() do
-        ["\u2705", "\u274c", "\u2705", "\u2705", "omega", "\u274c", "\u2705", "\u2705"]
+      list = ["\u2705", "\u274c", "\u2705", "\u2705", "omega", "\u274c", "\u2705", "\u2705"]
+      new_list = Enum.reduce(list, [], fn
+            "\u2705", acc -> ["\u2705" | acc]
+            "\u274c", acc -> ["\u03A9" | acc]
+            _, acc -> acc
+        end)
+      Enum.sort(new_list)
     end
 
     @doc """
@@ -65,9 +78,9 @@ defmodule Wizard.EnumChallenge do
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts magic_of_three == ["✅", "✅", "✅"]
-        IO.puts magic_of_red == ["❌", "❌"]
-        IO.puts magic_of_green == ["✅", "✅", "✅", "✅", "✅"]
-        IO.puts magic_of_reduce == ["\u2705", "\u03A9", "\u2705", "\u2705", "\u03A9", "\u2705", "\u2705"]
+        IO.puts magic_of_three() == ["✅", "✅", "✅"]
+        IO.puts magic_of_red() == ["❌", "❌"]
+        IO.puts magic_of_green() == ["✅", "✅", "✅", "✅", "✅"]
+        IO.puts magic_of_reduce() == ["Ω", "Ω", "✅", "✅", "✅", "✅", "✅"]
     end
   end
