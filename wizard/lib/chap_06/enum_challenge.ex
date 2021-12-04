@@ -65,9 +65,9 @@ defmodule Wizard.EnumChallenge do
     Run this function to test all your solutions.
     """
     def test() do
-        IO.puts magic_of_three == ["✅", "✅", "✅"]
-        IO.puts magic_of_red == ["❌", "❌"]
-        IO.puts magic_of_green == ["✅", "✅", "✅", "✅", "✅"]
-        IO.puts magic_of_reduce == ["\u2705", "\u03A9", "\u2705", "\u2705", "\u03A9", "\u2705", "\u2705"]
+        IO.puts magic_of_three() == ["✅", "✅", "✅"]
+        IO.puts magic_of_red() == ["❌", "❌"]
+        IO.puts magic_of_green() == ["✅", "✅", "✅", "✅", "✅"]
+        IO.puts magic_of_reduce() == ["Ω", "Ω", "✅", "✅", "✅", "✅", "✅"]
     end
   end
