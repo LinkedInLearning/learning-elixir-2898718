@@ -29,11 +29,7 @@ defmodule Wizard.Control do
       or group == 14 do
         "Other non metal"
       else
-        if group === 9 do
-          "Transition metal"
-        else
-          "Unknown"
-        end
+        "Unknown"
       end
     end
 
