@@ -43,7 +43,7 @@ defmodule Wizard.Reduce do
   Element classification groups.
 
   9 "transition metal"
-  14 "other non metal" 
+  14 "other non-metal" 
   """
   def example4 do
     elements = [

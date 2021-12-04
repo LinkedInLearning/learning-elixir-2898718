@@ -60,8 +60,14 @@ defmodule Wizard.EnumChallenge do
 
     @doc """
     Make enumerable magic!
-    Create a new list where the red x's have been replaced with the greek symbol omega.
-    Return a list only containing green check marks and omegas.
+    Create a new list where the red x's have been replaced 
+    with the greek symbol omega. Return a list only 
+    containing green check marks and omegas.
+
+    the `\` followed by `u` is an escape code for unicode 
+    values in Elixir. You can read more about them in the 
+    Elixir documentation sigils at 
+    https://elixir-lang.org/getting-started/sigils.html 
     """
     def magic_of_reduce() do
       list = ["\u2705", "\u274c", "\u2705", "\u2705", "omega", "\u274c", "\u2705", "\u2705"]
