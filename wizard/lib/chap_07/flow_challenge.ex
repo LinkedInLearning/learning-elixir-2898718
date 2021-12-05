@@ -39,27 +39,75 @@ defmodule Wizard.FlowChallenge do
 
     @doc """
     Classify the elements using the classifications in the 
-    module doc and the if/else control structure
+    module doc and the if/else control structure.
+
+    Add the correct classification to each element map in the
+    key :classification.
+
+    Return a list of the maps with the new key.
     """
     def if_control() do
-      []
+      Enum.reduce(elements(), [], fn %{name: name, group: group} = e, acc ->
+        classification =
+          if group == 14 or name == "Hydrogen" do
+            "other nonmetal"
+          else
+            if group == 1 do
+              "alkali metal"
+            else
+              if group == 9 do
+                "transition metal"
+              else
+                "Unknown"
+              end
+            end
+          end
+        [Map.put(e, :classification, classification) | acc]
+      end)
     end
 
 
     @doc """
     Classify the elements using the classifications in the 
-    module doc and the cond control structure
+    module doc and the cond control structure.
+
+    Add the correct classification to each element map in the
+    key :classification.
+
+    Return a list of the maps with the new key.
     """
     def cond_control() do
-      []
+      Enum.reduce(elements(), [], fn %{name: name, group: group} = e, acc ->
+        classification = cond do
+          name == "Hydrogen" || group == 14 -> "other nonmetal"
+          group == 1 -> "alkali metal"
+          group == 9 -> "transition metal"
+          true -> "Unknown"
+        end
+        [Map.put(e, :classification, classification) | acc]
+      end)
     end
 
     @doc """
     Classify the elements using the classifications in the 
-    module doc and the case control structure
+    module doc and the case control structure.
+
+    Add the correct classification to each element map in the
+    key :classification.
+
+    Return a list of the maps with the new key.
     """
     def case_control() do
-      []
+      Enum.reduce(elements(), [], fn e, acc ->
+        classification = case e do
+          e when e.name == "Hydrogen" -> "other nonmetal"
+          e when e.group === 1 -> "alkali metal"
+          e when e.group === 9 -> "transition metal"
+          e when e.group === 14 -> "other nonmetal"
+          _ -> "Unknown"
+        end
+        [Map.put(e, :classification, classification) | acc]
+      end)
     end
 
     @doc """
@@ -74,7 +122,7 @@ defmodule Wizard.FlowChallenge do
     defp classified_elements() do
         [
             %{
-                classification: "To be determined",
+                classification: "Unknown",
                 group: 18,
                 name: "Neon"
             },
