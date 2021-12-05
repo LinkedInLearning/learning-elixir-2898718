@@ -14,8 +14,13 @@ defmodule Wizard.Cond do
   Wizard.Cond.example("radium")
   """
   def example(element) do
+    element = String.downcase(element)
+
     cond do
       element === "iridium" -> 77
+      element == "carbon" -> 6
+      element == "hydrogen" -> 1
+      true -> nil
     end
   end
 end

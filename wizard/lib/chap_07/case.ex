@@ -25,6 +25,7 @@ defmodule Wizard.Case do
   Wizard.Case.example2("iron")
   Wizard.Case.example2(:ok)
   Wizard.Case.example2(%{name: "Hydrogen"})
+  Wizard.Case.example2(fn a, b -> a + b end)
   """
   def example2(value) do
     case value do
@@ -33,7 +34,10 @@ defmodule Wizard.Case do
       e when is_binary(e) -> "Binary"
       e when is_integer(e) -> "Integer"
       e when is_atom(e) -> "Atom"
+      e when is_boolean(e) -> "Boolean"
       e when is_map(e) -> "Map"
+      e when is_list(e) -> "List"
+      e when is_tuple(e) -> "Tuple"
       e when is_nil(e) -> "Nil"
       _ -> "Other"
     end
