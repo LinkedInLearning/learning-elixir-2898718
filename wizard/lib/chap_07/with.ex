@@ -5,17 +5,19 @@ defmodule Wizard.With do
   """
 
   @doc """
-  Try this value:
+  Try these values:
 
-  iex> e = %{name: "Iron", group: 8}
-  iex> Wizard.With.example(e)
-  iex> e = %{name: "Carbon", group: 8}
-  iex> Wizard.With.example(e)
+  e = %{name: "Iron", group: 8}
+  e = %{name: "Carbon", group: 8}
+  
+  Wizard.With.example(e)
   """
   def example(e) do
     with "Iron" <- Map.get(e, :name),
       8 <- Map.get(e, :group) do
         :ok
+    else
+      _ -> :error
     end
   end
 end
