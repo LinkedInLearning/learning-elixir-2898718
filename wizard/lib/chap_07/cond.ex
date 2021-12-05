@@ -16,6 +16,7 @@ defmodule Wizard.Cond do
   def example(element) do
     cond do
       element === "iridium" -> 77
+      element === "carbon" -> 6
     end
   end
 end
