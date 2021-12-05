@@ -7,9 +7,8 @@ defmodule Wizard.FlowChallenge do
     true. Instructions for each function can be found in the
     function doc.
     
-    You'll be classifying elements like we
-    did in chapter 6, but using control flow structures 
-    instead of reducers.
+    You'll be classifying elements using control flow 
+    structures and reducers.
 
     The classifications are:
 
@@ -40,6 +39,10 @@ defmodule Wizard.FlowChallenge do
     @doc """
     Classify the elements using the classifications in the 
     module doc and the if/else control structure.
+    
+    Replace the  body of the reducer's anonymous function 
+    with if/else structures to determine the correct 
+    classification of each element.
 
     Add the correct classification to each element map in the
     key :classification.
@@ -66,10 +69,13 @@ defmodule Wizard.FlowChallenge do
       end)
     end
 
-
     @doc """
     Classify the elements using the classifications in the 
     module doc and the cond control structure.
+    
+    Replace the  body of the reducer's anonymous function 
+    with a cond structure to determine the correct 
+    classification of each element.
 
     Add the correct classification to each element map in the
     key :classification.
@@ -90,7 +96,11 @@ defmodule Wizard.FlowChallenge do
 
     @doc """
     Classify the elements using the classifications in the 
-    module doc and the case control structure.
+    module doc and the case control structure. 
+    
+    Replace the  body of the reducer's anonymous function 
+    with a case structure to determine the correct 
+    classification of each element.
 
     Add the correct classification to each element map in the
     key :classification.
