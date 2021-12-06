@@ -6,20 +6,20 @@ defmodule Wizard.EnumChallenge do
     Your challenge is to complete the functions in this module.
 
     magic_of_three/0
-    This function should take the list of unicode numbers and
+    This function should take the list of unicode values and
       - sort it
       - return the first three elements
 
     magic_of_red/0
-    This function should take the list of unicode numbers  and
+    This function should take the list of unicode values  and
       - only return the red x's
 
     magic_of_green/0
-    This function should take the list of unicode numbers  and
+    This function should take the list of unicode values  and
       - use reduce/3 to only return the green check marks
 
     magic_of_reduce/0
-    This function take the list of unicode numbers and
+    This function take the list of unicode values and
       - return a new, sorted list
       - where the red x's have been replaced with the greek symbol omega
       - and only contains green check marks and omegas (anything else should be removed)
