@@ -5,6 +5,11 @@ defmodule Wizard.EnumChallenge do
 
     Your challenge is to complete the functions in this module.
 
+    The `\` followed by `u` is an escape code for unicode 
+    values in Elixir. You can read more about them in the 
+    Elixir documentation sigils at 
+    https://elixir-lang.org/getting-started/sigils.html 
+
     magic_of_three/0
     This function should take the list of unicode values and
       - sort it
