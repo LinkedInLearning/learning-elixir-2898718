@@ -34,9 +34,15 @@ defmodule Wizard.Con.EventSchedule do
   defp display_welcome(name) do
     IO.puts "Welcome #{name}"
   end
+  
+  // def display(wizard) do
+    // IO.puts "Welcome #{wizard.name}, Master of #{wizard.speciality}"
+    // display_events(wizard.events)
+    // "Let the magic begin!"
+  // end
 
   // defp display_welcome(name, speciality \\ "Curiosity") do
-    // IO.puts "Welcome #{name}, Master of #{speciality}"
+    // 
   // end
 
   defp display_events(events) do
