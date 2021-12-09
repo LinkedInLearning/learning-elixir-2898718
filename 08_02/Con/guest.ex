@@ -2,7 +2,6 @@ defmodule Wizard.Con.Guest do
   @moduledoc """
   Function to handle event guests.
   """
-  @specialties ["Elements", "Incantations", "Abjuration", "Enchantment"]
   alias Wizard.Con.EventSchedule, as: Schedule
   
   @doc """
@@ -10,9 +9,15 @@ defmodule Wizard.Con.Guest do
   """
   def new(name) do
     id = :rand.uniform(100)
-    speciality = Enum.random(@specialties)
     events = Schedule.events()
 
-    %{id: id, name: name, events: events, speciality: speciality}
+    %{id: id, name: name, events: events}
   end
+  
+  // def new(name, speciality \\ "Curiosity") do
+    // id = :rand.uniform(100)
+
+    // %{id: id, name: name, speciality: speciality}
+  // end
+  
 end
