@@ -9,7 +9,8 @@ defmodule Wizard.Con.Register do
   Register a new guest and display the schedule.
   """
   def new(name, speciality \\ "Curiosity") do
-    Guest.new(name, speciality)
+    Guest.new(name)
+    |> Guest.add_speciality(speciality)
     |> Schedule.add()
     |> display()
   end

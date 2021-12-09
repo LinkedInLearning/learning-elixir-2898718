@@ -10,9 +10,15 @@ defmodule Wizard.Con.Guest do
   """
   def new(nil), do: new(@default_name)
   
-  def new(name, speciality) do
+  def new(name) do
     id = :rand.uniform(100)
+    %{id: id, name: name}
+  end
 
-    %{id: id, name: name, speciality: speciality}
+  @doc """
+  Add a guest's speciality
+  """
+  def add_speciality(guest, value) do
+    Map.put(guest, :speciality, value)
   end
 end
