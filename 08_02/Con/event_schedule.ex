@@ -9,7 +9,7 @@ defmodule Wizard.Con.EventSchedule do
   def display(nil), do: "Guest not registered."
 
   def display(wizard) do
-    IO.puts "Welcome #{wizard.name}, Master of #{wizard.speciality}"
+    IO.puts "#{wizard.name}: Master of #{wizard.speciality}"
     for event <- get(), do: IO.puts event
   end
 
