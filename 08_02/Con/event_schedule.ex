@@ -1,6 +1,6 @@
 defmodule Wizard.Con.EventSchedule do
   @moduledoc """
-  Handle event display.
+  Functions to handle event display.
   """
 
   @doc """
