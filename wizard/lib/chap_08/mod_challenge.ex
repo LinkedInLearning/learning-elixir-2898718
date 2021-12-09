@@ -6,16 +6,16 @@ defmodule Wizard.ModChallenge do
 
     Your challenge is write a module. Name the module 
     
-    Wizard.ChallengeElements
+    Wizard.ElementChallenge
     
     Save the module in the chap_08 directory
     
-    08_04/challenge_elements.ex
+    08_04/element_challenge.ex
 
     Include the functions necessary to make the test/0 function 
     return true.
 
-      iex. Wizard.ModChallenge.test()
+      iex> Wizard.ModChallenge.test()
       true
     
     HINTS 
@@ -27,7 +27,7 @@ defmodule Wizard.ModChallenge do
     You can use it to determine whether an element is or is 
     not a metal.
     """
-    alias Wizard.ChallengeElements, as: Elements
+    alias Wizard.ElementChallenge, as: Elements
 
     @doc """
     Test your knowledge of modules and functions. Given a list of elements, the
