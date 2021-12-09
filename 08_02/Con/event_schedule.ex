@@ -26,26 +26,15 @@ defmodule Wizard.Con.EventSchedule do
   def display(nil), do: "Guest not registered."
 
   def display(wizard) do
-    display_welcome(wizard.name, wizard.speciality)
-    display_events(wizard.events)
-    "Let the magic begin!"
+    display_welcome(wizard)
+    display_schedule()
   end
 
   defp display_welcome(name) do
-    IO.puts "Welcome #{name}"
+    IO.puts "Welcome #{wizard.name}, Master of #{wizard.speciality}"
   end
-  
-  // def display(wizard) do
-    // IO.puts "Welcome #{wizard.name}, Master of #{wizard.speciality}"
-    // display_events(wizard.events)
-    // "Let the magic begin!"
-  // end
 
-  // defp display_welcome(name, speciality \\ "Curiosity") do
-    // 
-  // end
-
-  defp display_events(events) do
-    for event <- events, do: IO.puts event
+  defp display_schedule() do
+    for event <- schedule(), do: IO.puts event
   end
 end
