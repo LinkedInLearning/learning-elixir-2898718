@@ -1,11 +1,14 @@
 defmodule Wizard.Con.Guest do
   @moduledoc """
-  Handle event guests.
+  Function to handle event guests.
   """
   @specialties ["Elements", "Incantations", "Abjuration", "Enchantment"]
   alias Wizard.Con.EventSchedule, as: Schedule
   
-  defp new(name) do
+  @doc """
+  Accept a name and return a guest map with the name, a randomly generated ID, list of events, and a specialty.
+  """
+  def new(name) do
     id = :rand.uniform(100)
     speciality = Enum.random(@specialties)
     events = Schedule.events()
