@@ -15,10 +15,7 @@ defmodule Wizard.Con.Guest do
     %{id: id, name: name}
   end
 
-  @doc """
-  Add a guest's speciality
-  """
-  def add_speciality(guest, value) do
-    Map.put(guest, :speciality, value)
+  def add_specialty(guest, specialty) do
+    Map.put(guest, :specialty, specialty)
   end
 end
