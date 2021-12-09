@@ -6,7 +6,7 @@ defmodule Wizard.Con.Register do
   alias Wizard.Con.EventSchedule, as: Schedule
 
   @doc """
-  Create a new WizCon registration. Take a name, create a guest, and return a schedule.
+  Register a new guest and display the schedule.
   """
   def new(name) do
     Guest.new(name)
