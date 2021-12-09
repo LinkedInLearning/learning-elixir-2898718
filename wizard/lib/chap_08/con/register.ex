@@ -15,7 +15,7 @@ defmodule Wizard.Con.Register do
   end
 
   defp display(guest) do
-    IO.puts "#{guest.name}: Master of #{guest.speciality}"
+    IO.puts "#{guest.name}"
     for event <- guest.events, do: IO.puts event
     "Let the magic begin!"
   end
