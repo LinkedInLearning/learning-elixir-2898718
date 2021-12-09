@@ -4,11 +4,27 @@ defmodule Wizard.Con.EventSchedule do
   """
 
   @doc """
-  Print out a WizCon schedule for a guest.
+  Get the convention schedule sorted by the time of events
+  """
+  def get() do
+    schedule()
+    |> Enum.sort()
+  end
+
+  defp schedule() do
+    [
+      "11:00 - Wands in Room A",
+      "09:00 - Alchemy in Room B",
+      "15:00 - Advanced Cauldrons in Room B",
+      "13:00 - Elements 101 in Room A"
+    ]
+  end
+  
+  @doc """
+  Print out the schedule
   """
   def display(nil), do: "Guest not registered."
 
-  # TODO end of chapter question: why don't I use IO.puts on the last line of this function?
   def display(wizard) do
     display_welcome(wizard.name, wizard.speciality)
     display_events(wizard.events)
@@ -21,24 +37,5 @@ defmodule Wizard.Con.EventSchedule do
 
   defp display_events(events) do
     for event <- events, do: IO.puts event
-  end
-
-  def events() do
-    get_events()
-    |> Enum.sort()
-    |> Enum.map(fn event ->
-      event
-      |> String.replace(";", " - ")
-      |> String.replace("/", " in ")
-    end)
-  end
-
-  defp get_events() do
-    [
-      "11:00;Wands/Room A",
-      "09:00;Alchemy/Room B",
-      "15:00;Advanced Cauldrons/Room B",
-      "13:00;Elements 101/Room A"
-    ]
   end
 end
