@@ -23,32 +23,12 @@ defmodule Wizard.Advanced do
 
   def display_schedule([day | rest]) do
     IO.puts "Day #{to_string(day.day)}" 
-    display_events(day.events)
+    # display_events(day.events)
 
     display_schedule(rest)
   end
 
-  @doc """
-  Use recursion to display the time and name of events
-  """
-  def display_events(event) when is_map(event) do
-    Enum.map(event, &display_events/1)
-  end
-
-  def display_events({time, [id | next_ids]}) do
-    section = Keyword.get(all_events(), String.to_atom(id))
-    IO.inspect "#{time} - #{section}"
-    display_events({time, next_ids})
-  end
-
-  def display_events({_, []}), do: nil
-  
-  @doc """
-  Return the conference schedule as a map.
-  In a real application this would likely come from 
-  a database or other storage.
-  """
-  def schedule() do
+  defp schedule() do
     [
       %{
         day: 3,
@@ -87,12 +67,7 @@ defmodule Wizard.Advanced do
     ]
   end
 
-  @doc """
-  Return the events and their IDs as a keyword list.
-  In a real application this would likely come from 
-  a database or other storage.
-  """
-  def all_events() do
+  defp all_events() do
     [
       "0": "Networking",
       "1": "Alchemy", "2": "Advanced Alchemy",
