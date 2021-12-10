@@ -36,9 +36,10 @@ defmodule Wizard.Advanced do
     Enum.map(event, &display_events/1)
   end
 
-  def display_events({time, [section | next_sections]}) do
-    IO.inspect "#{time} - " <> Keyword.get(events(), String.to_atom(section))  
-    display_events({time, next_sections})
+  def display_events({time, [id | next_ids]}) do
+    section = Keyword.get(all_events(), String.to_atom(id))
+    IO.inspect "#{time} - #{section}"
+    display_events({time, next_ids})
   end
 
   def display_events({_, []}), do: nil
@@ -92,7 +93,7 @@ defmodule Wizard.Advanced do
   In a real application this would likely come from 
   a database or other storage.
   """
-  def events() do
+  def all_events() do
     [
       "0": "Networking",
       "1": "Alchemy", "2": "Advanced Alchemy",
