@@ -1,5 +1,4 @@
 defmodule Wizard.Advanced do
-
   @doc """
   Use recursion to display the schedule of events
   """
