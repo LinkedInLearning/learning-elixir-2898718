@@ -12,7 +12,7 @@ defmodule Wizard do
       :world
 
   """
-  def hello(name) do
-    "Welcome, #{name}!"
+  def hello() do
+    :world
   end
 end
