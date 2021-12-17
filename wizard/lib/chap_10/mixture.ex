@@ -3,7 +3,7 @@ defmodule Wizard.Mixture do
   @doc """
   Return the current DateTime in UTC
   """
-  def mix() do
+  def mix_time() do
     Timex.now()
   end
 end

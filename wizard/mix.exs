@@ -22,6 +22,7 @@ defmodule Wizard.MixProject do
   defp deps do
     [
       # {:dep_from_hexpm, "~> 0.3.0"}
+      {:timex, "~> 3.0"} 
     ]
   end
 end
