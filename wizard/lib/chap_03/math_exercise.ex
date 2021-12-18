@@ -34,19 +34,19 @@ defmodule Wizard.MathExercise do
     answer_5 = 3
     test_5 = answer_5 == 3
 
-    answer_6 = 2 # or any value not equal to 10
+    answer_6 = 2
     test_6 = 0 != answer_6
 
     answer_7 = 10.0
     test_7 = answer_7===10.0
 
-    answer_8 = 3.25 # or any value not equal to 0
+    answer_8 = 3.25
     test_8 = answer_8 !== 0
 
-    answer_9 = 4 # or any value not equal to 3.25
+    answer_9 = 4
     test_9 = answer_9 > 3.25
 
-    answer_10 = 10.76 # or any value greater than or equal to 10.75
+    answer_10 = 10.76
     test_10 = 10.75 <= answer_10
 
     test_1 && test_2 && test_3 && test_4 && test_5 && test_6 && test_7 && test_8 && test_9 && test_10
