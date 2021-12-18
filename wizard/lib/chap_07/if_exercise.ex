@@ -35,9 +35,9 @@ defmodule Wizard.IfExercise do
     """
     def hydrogen?(%{name: name}) do
       if name == "Hydrogen" do
-          true
+        true
       else
-          false
+        false
       end
     end
 
@@ -47,9 +47,9 @@ defmodule Wizard.IfExercise do
     """
     def nonmetal?(%{group: group}) do
       if group == 1 or group == 14 do
-          true
+        true
       else
-          false
+        false
       end
     end
 
@@ -58,7 +58,7 @@ defmodule Wizard.IfExercise do
     """
     def message(element) do
       unless Map.get(element, :name) === "Hydrogen" do
-          "Not Hydrogen"
+        "Not Hydrogen"
       end
     end
 
