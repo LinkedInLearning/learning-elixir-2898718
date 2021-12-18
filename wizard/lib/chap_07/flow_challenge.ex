@@ -110,10 +110,9 @@ defmodule Wizard.FlowChallenge do
     def case_control() do
       Enum.reduce(elements(), [], fn e, acc ->
         classification = case e do
-          e when e.name == "Hydrogen" -> "other nonmetal"
+          e when e.name == "Hydrogen" or e.group == 14 -> "other nonmetal"
           e when e.group === 1 -> "alkali metal"
           e when e.group === 9 -> "transition metal"
-          e when e.group === 14 -> "other nonmetal"
           _ -> "Unknown"
         end
         [Map.put(e, :classification, classification) | acc]
