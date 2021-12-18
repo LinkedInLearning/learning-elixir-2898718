@@ -27,10 +27,10 @@ defmodule Wizard.LogicExercise do
     answer_3 = "string" 
     test_3 = is_binary(answer_3)
 
-    answer_4 = [3, 10, "string"] 
+    answer_4 = [3, 3.25, "string"] 
     test_4 = is_list(answer_4)
 
-    answer_5 = 1 # or any value that evaluates to true
+    answer_5 = true 
     test_5 = true and answer_5
 
     answer_6 = "string" # or any value that evalutes to true
