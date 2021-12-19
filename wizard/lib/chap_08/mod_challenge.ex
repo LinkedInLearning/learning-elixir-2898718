@@ -22,7 +22,7 @@ defmodule Wizard.ModChallenge do
 
     This is a list of the atomic numbers of nonmetals:
     
-    [1, 1, 6, 7, 8, 9, 10, 15, 16, 17, 18, 34, 35, 36, 53, 54, 85, 86]
+    [1, 6, 7, 8, 9, 10, 15, 16, 17, 18, 34, 35, 36, 53, 54, 85, 86]
 
     You can use it to determine whether an element is or is 
     not a metal.
