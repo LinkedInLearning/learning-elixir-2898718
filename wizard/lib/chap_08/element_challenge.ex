@@ -1,5 +1,5 @@
 defmodule Wizard.ElementChallenge do
-  @nonmetals [1, 1, 6, 7, 8, 9, 10, 15, 16, 17, 18, 34, 35, 36, 53, 54, 85, 86]
+  @nonmetals [1, 6, 7, 8, 9, 10, 15, 16, 17, 18, 34, 35, 36, 53, 54, 85, 86]
 
   def heavy_metal([]), do: :error
   def heavy_metal(elements) when is_list(elements) do
