@@ -38,7 +38,7 @@ defmodule Wizard.LogicExercise do
     test_6 = nil || answer_6
 
     answer_7 = nil
-    test_7 = !answer_7
+    test_7 = not answer_7
 
     answer_8 = nil
     test_8 = !is_atom(answer_8)
