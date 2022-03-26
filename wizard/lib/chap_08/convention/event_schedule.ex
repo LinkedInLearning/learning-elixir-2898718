@@ -19,7 +19,7 @@ defmodule Wizard.Con.EventSchedule do
       "13:00 - #{event("ELeMeNtS")} 101 in Room A"
     ]
   end
-  
+
   defp event(e) do
     e
     |> String.downcase()
